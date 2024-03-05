@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "form-validation-top",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/carlosfrontend/form-validation-top.git"
   },
   "author": "carlosfrontend",
   "license": "ISC",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/carlosfrontend/form-validation-top/issues"
   },
-  "homepage": "",
+  "homepage": "https://github.com/carlosfrontend/form-validation-top/#readme",
   "devDependencies": {
     "css-loader": "^6.9.0",
     "css-minimizer-webpack-plugin": "^6.0.0",
@@ -34,5 +34,8 @@
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1",
     "webpack-merge": "^5.10.0"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
   }
 }

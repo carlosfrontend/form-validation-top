@@ -6,7 +6,7 @@ module.exports = {
   entry: './src/index.js',
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Starter Template',
+      title: 'Form Validation TOP',
       favicon: '',
       filename: 'index.html',
       template: path.resolve(__dirname, 'src', 'index.html'),
