@@ -78,10 +78,11 @@
           >
           <input
             type="password"
-            name="passwordS"
+            name="passwordA"
             id="passwordA"
             placeholder="You password"
             required
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?_])(?!\s)[a-zA-Z\d#$@!%&*?_]{8,16}$"
           />
           <span class="error" aria-live="polite"></span>
         </div>
@@ -98,6 +99,7 @@
             id="passwordB"
             placeholder="Repeat your password"
             required
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?_])(?!\s)[a-zA-Z\d#$@!%&*?_]{8,16}$"
           />
           <span class="error" aria-live="polite"></span>
         </div>
@@ -106,5 +108,7 @@
         <input type="submit" id="send" value="Submit" />
       </div>
     </form>
+    <div class="smile-container">
+    </div>
   </body>
 </html>

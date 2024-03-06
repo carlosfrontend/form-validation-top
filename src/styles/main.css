@@ -8,6 +8,7 @@ body {
   height: 100vh;
   background: linear-gradient(to right bottom, #0dab4fcc, #7300ff);
   font-family: sans-serif;
+  overflow: hidden;
 }
 
 body {
@@ -17,6 +18,7 @@ body {
 }
 
 #contact-form {
+  width: 862px;
   background-color: var(--form-background);
   padding: 4em;
 }
@@ -25,11 +27,13 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 4em;
+  justify-items: stretch;
+  align-items: start;
 }
 
 h1.title {
   margin: 0;
-  font-size: 4rem;
+  font-size: 3rem;
   display: grid;
   align-self: center;
   font-family: "Oswald", sans-serif;
@@ -40,7 +44,6 @@ h1.title {
 
 .form-group {
   display: grid;
-  margin-bottom: 1em;
 }
 
 label {
@@ -104,6 +107,34 @@ input[type="submit"] {
   padding-right: -2em;
 }
 
+.success {
+  position: relative;
+  width: 95.8%;
+  font-size: 1rem;
+  display: grid;
+  justify-self: start;
+  align-items: center;
+  color: #50a537;
+  font-weight: bold;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-right: -2em;
+}
+
+.invalid {
+  position: relative;
+  width: 95.8%;
+  font-size: 1rem;
+  display: grid;
+  justify-self: start;
+  align-items: center;
+  color: red;
+  font-weight: bold;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-right: -2em;
+}
+
 .error .active {
   padding: 0.2em;
 }
@@ -121,9 +152,49 @@ select:invalid {
   outline: 4px solid red;
   border: none;
 }
+.smile-container {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 600ms ease-in 200ms;
+  transition: transform 300ms ease-in 200ms;
+}
+.smile-container.move {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  flex-direction: column;
+  transform: rotate(-20deg);
+}
+.smile-container.move::before{
+  display: block;
+  content: "";
+  font-size: 2rem;
+  color:red;
+  position: relative;
+  top:5em;
+  opacity:0;
+}
+.smile-container.move::after{
+  display: block;
+  content: "Hey high five!";
+  font-size: 2rem;
+  color:#ffffff;
+  position: relative;
+  top:1em;
+  opacity: 1;
+}
+
+.icon{
+  width: 200px;
+  height: 200px;
+}
 
 @media screen and (max-width: 1440px) {
   #contact-form {
+    width: 700px;
     padding: 3em;
   }
   .header-group,
@@ -131,6 +202,8 @@ select:invalid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 4em;
+    justify-items: stretch;
+    align-items: start;
   }
 
   input {
@@ -148,6 +221,7 @@ select:invalid {
 
 @media screen and (max-width: 1024px) {
   #contact-form {
+    width: 600px;
     padding: 2em;
   }
   .header-group,
