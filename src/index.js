@@ -132,7 +132,6 @@ passwordB.addEventListener('input', () => {
   } else {
     passwordBErrror.textContent = 'Passwords do not match!';
     passwordBErrror.className = 'error active';
-    // showError();
   }
 });
 contactForm.addEventListener('submit', (e) => {
@@ -148,8 +147,10 @@ contactForm.addEventListener('submit', (e) => {
   } else if (!passwordA.validity.valid) {
     showError();
     e.preventDefault();
-  }
-  if (
+  }else if(!passwordB.validity.valid){
+    showError();
+    e.preventDefault();
+  }else if (
     passwordB.value !== passwordA.value &&
     passwordB.value !== '' &&
     passwordA !== ''
