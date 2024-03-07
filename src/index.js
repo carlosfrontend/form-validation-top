@@ -14,8 +14,8 @@ const email = document.querySelector('#email');
 const emailError = document.querySelector('#email + span.error');
 const countryError = document.querySelector('#country + span.error');
 const zipError = document.querySelector('#zip + span.error');
-const passwordAErrror = document.querySelector('#passwordA + span.error');
-const passwordBErrror = document.querySelector('#passwordB + span.error');
+const passwordAError = document.querySelector('#passwordA + span.error');
+const passwordBError = document.querySelector('#passwordB + span.error');
 let myRegexp;
 let myZipCode;
 let myZipMessage;
@@ -48,21 +48,21 @@ const showError = () => {
   }
 
   if (passwordA.validity.valueMissing) {
-    passwordAErrror.textContent = 'You must enter a passwword';
+    passwordAError.textContent = 'You must enter a passwword';
   } else if (passwordA.validity.patternMismatch) {
-    passwordAErrror.textContent =
+    passwordAError.textContent =
       'It must contain at least one uppercase letter, one lowercase letter, one number, no spaces and one of the following symbols # $ @ ! % & * . The length must be between 8 and 12 characters';
   } else {
-    passwordAErrror.textContent = '';
+    passwordAError.textContent = '';
   }
 
   if (passwordB.validity.valueMissing) {
-    passwordBErrror.textContent = 'You must confirm the passwword';
+    passwordBError.textContent = 'You must confirm the passwword';
   } else if (passwordB.validity.patternMismatch) {
-    passwordBErrror.textContent =
+    passwordBError.textContent =
     'It must contain at least one uppercase letter, one lowercase letter, one number, no spaces and one of the following symbols # $ @ ! % & * . The length must be between 8 and 12 characters';
     if (passwordA.value === passwordB.value && !passwordB.validity.patternMismatch) {
-      passwordBErrror.classList.remove('error active');
+      passwordBError.classList.remove('error active');
      
     }
   }
@@ -70,7 +70,7 @@ const showError = () => {
   emailError.className = 'error active';
   countryError.className = 'error active';
   zipError.className = 'error active';
-  passwordAErrror.className = 'error active';
+  passwordAError.className = 'error active';
   
 };
 
@@ -114,7 +114,7 @@ zip.addEventListener('input', () => {
 
 passwordA.addEventListener('input', () => {
   if (passwordA.validity.valid) {
-    passwordAErrror.textContent = '';
+    passwordAError.textContent = '';
   } else {
     showError();
   }
@@ -127,11 +127,11 @@ passwordB.addEventListener('input', () => {
     passwordA.value !== '' &&
     !passwordB.validity.patternMismatch
   ) {
-    passwordBErrror.textContent = 'Passwords match!';
-    passwordBErrror.className = 'success active';
+    passwordBError.textContent = 'Passwords match!';
+    passwordBError.className = 'success active';
   } else {
-    passwordBErrror.textContent = 'Passwords do not match!';
-    passwordBErrror.className = 'error active';
+    passwordBError.textContent = 'Passwords do not match!';
+    passwordBError.className = 'error active';
   }
 });
 contactForm.addEventListener('submit', (e) => {
